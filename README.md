@@ -59,6 +59,15 @@ The database listens on port **15432**, so it won't clash with a PostgreSQL you 
 - Windows: `Copy-Item .env.example .env; notepad .env`
 - macOS / Linux: `cp .env.example .env`, then edit `.env`
 
+The Compose file also starts a FastAPI service on port **8000**. After the database has been initialized with `python generate_data.py`, you can retrieve a customer through the API:
+
+```
+curl http://localhost:8000/health
+curl http://localhost:8000/users/<customer_id>
+```
+
+The API maps `customer_id` from the `customers` table to `user_id` in its response. Set `API_PORT` in `.env` if port 8000 is already in use.
+
 ## 4. Python environment and data
 
 **Windows (PowerShell)**
