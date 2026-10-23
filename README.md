@@ -63,10 +63,10 @@ The Compose file also starts a FastAPI service on port **8000**. After the datab
 
 ```
 curl http://localhost:8000/health
-curl http://localhost:8000/users/<customer_id>
+curl http://localhost:8000/customers/<customer_id>
 ```
 
-The API maps `customer_id` from the `customers` table to `user_id` in its response. Set `API_PORT` in `.env` if port 8000 is already in use.
+The API returns `customer_id` from the `customers` table. Set `API_PORT` in `.env` if port 8000 is already in use.
 
 ## 4. Python environment and data
 
